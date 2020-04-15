@@ -1,3 +1,4 @@
+
 Element.prototype.appendAfter = function(element) {
     element.parentNode.insertBefore(this, element.nextSibling)
 }
@@ -76,6 +77,9 @@ $.modal = function(options) {
             setTimeout(() => {
                 $modal.classList.remove('hide')
                 closing = false
+                if (typeof options.onClose === 'function') {
+                    options.onClose()
+                }
             }, ANIMATION_SPEED)
         },
     }
@@ -99,3 +103,4 @@ $.modal = function(options) {
         }
     })
 }
+
