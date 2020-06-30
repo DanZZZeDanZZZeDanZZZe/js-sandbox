@@ -1,7 +1,7 @@
 function quicksort(arr) {
   if (arr.length < 2) return arr
 
-  const pivotIndex = Math.floor(arr.length / 2)
+  const pivotIndex = Math.floor(Math.random() * arr.length)
   const pivot = arr[pivotIndex]
 
   const less = arr.filter((item, index) => item <= pivot && index !== pivotIndex)
