@@ -50,13 +50,13 @@
   font-size: 12px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 735px) {
   .logo__tagline {
     display: none;
   }
 }
 
-@media (min-width: 321px) {
+@media (min-width: 736px) {
   .logo__tagline {
     align-self: center;
   }
