@@ -1,0 +1,134 @@
+/* Menu */
+
+@media (max-width: 735px) {
+  .menu {
+    display: grid;
+  }
+}
+
+/* Button */
+
+@media (max-width: 735px) {
+  .menu__button {
+    z-index: 1;
+    display: block;
+    margin: 0;
+    margin-top: 24px;
+    margin-right: 16px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 736px) {
+  .menu__button {
+    display: none;
+  }
+}
+
+/* Icon */
+
+@media (max-width: 735px) {
+  .menu__icon {
+    stroke: var(--basic-black);
+  }
+
+  .menu__icon:hover {
+    stroke: var(--special-neutral);
+  }
+
+  .menu__icon-menu,
+  .menu__button--open .menu__icon-cross {
+    display: none;
+  }
+
+  .menu__icon-cross,
+  .menu__button--open .menu__icon-menu {
+    display: block;
+  }
+}
+
+/* List */
+
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+
+@media (max-width: 735px) {
+  .menu__list {
+    display: none;
+    row-gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 24px;
+    padding-left: 64px;
+    background-color: var(--basic-white);
+    box-shadow: 0 50vh 0 50vh var(--special-dark-10a);
+  }
+
+  .menu__list--open {
+    display: grid;
+  }
+}
+
+@media (min-width: 736px) {
+  .menu__list {
+    display: grid;
+    grid-auto-flow: column;
+    row-gap: 8px;
+  }
+}
+
+/* Item */
+
+.menu__item {
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Link */
+
+.menu__link {
+  color: var(--special-dark)
+}
+
+.menu__link--current {
+  color: var(--basic-black);
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Dewi expanded', sans-serif;
+}
+
+.menu__link--inactive {
+  color: var(--basic-semi-light)
+}
+
+.menu__link--patreon {
+  padding-left: 18px;
+}
+
+.menu__link--patreon::before {
+  position: absolute;
+  margin-top: 2px;
+  margin-left: -18px;
+  width: 16px;
+  height: 16px;
+  content: url('../../images/patreon.svg');
+}
+
+@media (max-width: 735px) {
+  .menu__link--patreon {
+    margin-left: -18px;
+  }
+}
+
+@media (min-width: 736px) {
+  .menu__link {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
