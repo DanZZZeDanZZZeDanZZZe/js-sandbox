@@ -1,5 +1,5 @@
 import React from 'react'
-import {Transition, animated} from 'react-spring/renderprops'
+import {useTransition, animated} from 'react-spring'
 import {attach} from '../../utils'
 
 export default function HeaderNav({children, activity, isMedium}) {
@@ -15,14 +15,11 @@ export default function HeaderNav({children, activity, isMedium}) {
     </ul>
   )
 
-  const animatedNav = style => (
-    <animated.nav 
-      style={style}
-      className={`fixed top-0 right-0 h-full w-full bg-black bg-opacity-25 z-40 font-bold`}
-    >
-      {list}
-    </animated.nav>
-  )
+  const transitions = useTransition(activity, null, {
+    from: {paddingLeft: '70%', opacity: 0},
+    enter: {paddingLeft: '20%', opacity: 1},
+    leave: {paddingLeft: '70%', opacity: 0}
+  })
 
   return (
     isMedium ? 
@@ -32,15 +29,14 @@ export default function HeaderNav({children, activity, isMedium}) {
       `}>
         {list}
       </nav> :
-      <Transition
-        unique
-        native
-        items={activity}
-        from={{paddingLeft: '70%', opacity: 0}}
-        enter={{paddingLeft: '20%', opacity: 1}}
-        leave={{paddingLeft: '70%', opacity: 0}}
-      >
-        {activity => activity && animatedNav}
-      </Transition> 
+      transitions.map(({item, props}) =>
+        item &&
+        <animated.nav 
+          style={props}
+          className={`fixed top-0 right-0 h-full w-full bg-black bg-opacity-25 z-40 font-bold`}
+        >
+          {list}
+        </animated.nav>
+      )
   )
 }
