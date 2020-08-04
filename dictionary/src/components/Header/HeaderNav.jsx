@@ -7,7 +7,7 @@ export default function HeaderNav({children, activity, isMedium}) {
     <ul 
       className={`
         flex align-center
-        ${attach('no-md', 'ml-auto h-full block pt-16 bg-purple-600 rounded-l-lg')}
+        ${attach('no-md', 'h-full block pt-16 bg-indigo-300 shadow-inner rounded-l-lg')}
         ${attach('md', 'flex-row justify-between')}
       `}
     > 
@@ -18,7 +18,7 @@ export default function HeaderNav({children, activity, isMedium}) {
   const animatedNav = style => (
     <animated.nav 
       style={style}
-      className={`absolute top-0 right-0 h-full w-full bg-pink-300 bg-opacity-25`}
+      className={`fixed top-0 right-0 h-full w-full bg-black bg-opacity-25 z-40 font-bold`}
     >
       {list}
     </animated.nav>

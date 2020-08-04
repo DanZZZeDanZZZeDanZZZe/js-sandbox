@@ -14,7 +14,7 @@ function Header() {
     <header 
       className={`
         grid items-center h-16 w-auto px-4 bg-purple-300
-        no-md:grid-cols-6
+        ${attach('no-md', 'fixed top-0 grid-cols-6')}
         md:grid-cols-10
       `}
     >
@@ -32,7 +32,7 @@ function Header() {
         <button
           type="button" 
           onClick= {() => setActivity(!activity)}
-          className={`col-start-6 min-w-12 w-12 z-10`}
+          className={`col-start-6 min-w-12 w-12 z-50`}
         >
           <MenuIcon activity={activity}/>
         </button>
