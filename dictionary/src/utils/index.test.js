@@ -1,10 +1,19 @@
-import {move, insert} from './index'
+import {swap, insert, clamp} from './index'
 
-test('testing the move function', () => {
-  expect(move(['a', 'b', 'c', 'd'], 1, 2)).toEqual(['a', 'c', 'b', 'd'])
-  expect(move(['a', 'b', 'c'], 2, 0)).toEqual(['c', 'a', 'b'])
-  expect(move(['a', 'b', 'c'], 2, 2)).toEqual(['a', 'b', 'c'])
-  expect(move([['a', 'b'], 'c', [1, 2]], 1, 2)).toEqual([['a', 'b'], [1, 2], 'c'])
+test('testing the clamp function', () => {
+  expect(clamp(10, 2, 4)).toBe(4)
+  expect(clamp(-10, 2, 4)).toBe(2)
+  expect(clamp(3, 2, 4)).toBe(3)
+  expect(clamp(2, 2, 4)).toBe(2)
+  expect(clamp(4, 2, 4)).toBe(4)
+  expect(() => clamp(-10, 4, 2)).toThrowError('Invalid range specified')
+})
+
+test('testing the swap function', () => {
+  expect(swap(['a', 'b', 'c', 'd'], 1, 2)).toEqual(['a', 'c', 'b', 'd'])
+  expect(swap(['a', 'b', 'c'], 2, 0)).toEqual(['c', 'a', 'b'])
+  expect(swap(['a', 'b', 'c'], 2, 2)).toEqual(['a', 'b', 'c'])
+  expect(swap([['a', 'b'], 'c', [1, 2]], 1, 2)).toEqual([['a', 'b'], [1, 2], 'c'])
 })
 
 test('testing the insert function', () => {

@@ -6,7 +6,14 @@ export function attach(prefix, classes) {
       .join(' ')
 }
 
-export function move(arr, currentIndex, newIndex) {
+export function clamp(number, min = 0, max) {
+  if (min > max) throw new Error('Invalid range specified')
+  if (number < min) return min
+  if (number > max) return max
+  return number
+}
+
+export function swap(arr, currentIndex, newIndex) {
   if (newIndex === currentIndex) return arr
   const [ item ] = arr.splice(currentIndex, 1)
   return insert(arr, item, newIndex)
