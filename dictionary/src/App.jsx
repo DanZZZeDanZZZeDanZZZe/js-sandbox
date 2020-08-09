@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom"
 import Header from './components/Header'
+import Dictionary from './components/Dictionary'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path="/">
+          <Dictionary/>
         </Route>
         <Route path="/profile">
         </Route>

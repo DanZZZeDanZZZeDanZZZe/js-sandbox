@@ -13,18 +13,18 @@ function Header() {
   return (
     <header 
       className={`
-        grid items-center h-16 w-auto px-4 bg-purple-300
-        ${attach('no-md', 'fixed top-0 grid-cols-6')}
-        md:grid-cols-10
+        fixed top-0 left-0 right-0 grid items-center h-16 w-auto px-4 bg-purple-300 z-10
+        ${attach('no-md', 'grid-cols-6')}
+        ${attach('md', 'grid-cols-10 h-12')}
       `}
     >
       <input 
         type="search" 
         placeholder="Search by section"
         className={`
-          h-12 min-w-0 px-4 py-2 rounded-md
-          ${attach('no-md', 'col-start-1 col-span-4')}
-          ${attach('md', 'col-start-2 col-span-3')}
+          min-w-0 px-4 py-2 rounded-md
+          ${attach('no-md', 'col-start-1 col-span-4 h-12')}
+          ${attach('md', 'col-start-2 col-span-3 h-10')}
         `}
       />
       {
