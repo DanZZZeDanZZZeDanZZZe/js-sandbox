@@ -11,7 +11,8 @@
     "react-responsive": "^8.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "react-use-gesture": "^7.0.15"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
