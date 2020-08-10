@@ -1,6 +1,6 @@
 import React from 'react'
-import {useTransition, animated} from 'react-spring'
 import {attach} from '../../utils'
+import NavMobile from './NavMobile'
 
 export default function HeaderNav({children, activity, isMedium}) {
   const list = (
@@ -14,13 +14,7 @@ export default function HeaderNav({children, activity, isMedium}) {
       {children}
     </ul>
   )
-
-  const transitions = useTransition(activity, null, {
-    from: {paddingLeft: '70%', opacity: 0},
-    enter: {paddingLeft: '20%', opacity: 1},
-    leave: {paddingLeft: '70%', opacity: 0}
-  })
-
+    
   return (
     isMedium ? 
       <nav className={`
@@ -29,14 +23,8 @@ export default function HeaderNav({children, activity, isMedium}) {
       `}>
         {list}
       </nav> :
-      transitions.map(({item, props}) =>
-        item &&
-        <animated.nav 
-          style={props}
-          className={`fixed top-0 right-0 h-full w-full bg-black bg-opacity-25 z-40 font-bold`}
-        >
-          {list}
-        </animated.nav>
-      )
+      <NavMobile activity={activity}>
+        {list}
+      </NavMobile>
   )
 }
