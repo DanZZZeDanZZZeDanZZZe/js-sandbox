@@ -5,7 +5,8 @@ function Word({children}) {
   return (
     <div 
       className={`
-        h-32 pt-4 bg-white shadow-lg rounded-lg text-3xl text-center
+        c-box h-32 pt-4
+        transition duration-150 cursor-pointer hover:bg-gray-100 transform hover:scale-90
         ${attach('no-md', 'mt-10')}
         ${attach('md', 'w-full')}
       `}
