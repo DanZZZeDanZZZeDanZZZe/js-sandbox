@@ -14,7 +14,8 @@ connect(
   `mongodb+srv://${username}:${password}@cluster0.xhwza.azure.mongodb.net/${dbName}?retryWrites=true&w=majority`,
   { 
     useNewUrlParser: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
+    useFindAndModify: false
   }
 )
 
