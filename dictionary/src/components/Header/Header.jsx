@@ -22,7 +22,7 @@ function Header() {
         type="search" 
         placeholder="Search by section"
         className={`
-          min-w-0 px-4 py-2 rounded-md
+          c-input min-w-0
           ${attach('no-md', 'col-start-1 col-span-4 h-12')}
           ${attach('md', 'col-start-2 col-span-3 h-10')}
         `}

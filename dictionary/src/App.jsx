@@ -6,6 +6,7 @@ import {
 } from "react-router-dom"
 import Header from './components/Header'
 import Dictionary from './components/Dictionary'
+import Borard from './components/Board'
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Dictionary/>
+        </Route>
+        <Route path="/add-word">
+          <Borard/>
         </Route>
         <Route path="/profile">
         </Route>

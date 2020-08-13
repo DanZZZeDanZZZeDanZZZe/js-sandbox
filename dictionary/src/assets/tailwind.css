@@ -10,4 +10,8 @@
   @apply min-h-screen h-auto pt-16 bg-indigo-200
 }
 
+.c-input {
+  @apply px-4 py-2 rounded-md
+}
+
 @tailwind utilities;
