@@ -1,6 +1,6 @@
 import React from 'react'
 import {attach} from '../../utils'
-import WorkingSurfaceHolder from './WorkingSurfaceHolder'
+import WorkingSurface from './WorkingSurface'
 import WordInput from './WordInput'
 
 function Board() {
@@ -22,7 +22,7 @@ function Board() {
           `}
         />
       </div>
-      <WorkingSurfaceHolder/>
+      <WorkingSurface/>
     </div>
   )
 }
