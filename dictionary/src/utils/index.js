@@ -7,10 +7,13 @@ export function attach(prefix, classes) {
 }
 
 export function clamp(number, min = 0, max) {
-  if (min > max) throw new Error('Invalid range specified')
-  if (number < min) return min
-  if (number > max) return max
-  return number
+  const error = () => {
+    throw new Error('Invalid range specified')
+  }
+  min > max && error()
+  return min <= number && max >= number ? 
+      number :
+      number < min ? min : max
 }
 
 export function swap(arr, currentIndex, newIndex) {
