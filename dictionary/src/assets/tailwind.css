@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+.c-box {
+  @apply bg-white shadow-lg rounded-lg text-3xl text-center;
+}
+
+.c-main {
+  @apply min-h-screen h-auto pt-16 bg-indigo-200
+}
+
+.c-input {
+  @apply px-4 py-2 rounded-md
+}
+
+@tailwind utilities;
